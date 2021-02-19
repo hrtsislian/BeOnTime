@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css" type="text/css"/> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="JS/app.js"></script>
+
+    
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+        <div id="header" class="jumbotron">
+            <h1>Be On Time</h1>
+            <h3>Time management for the perpetualy late</h3>
+        </div>
+    <div class="col-md-6">
+    <form id="distance_form">
+        <h3>What is your mission today?</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+        <br>       
+        <div id=form class="form-group">
+        <label>Origin: </label>
+        <input  id="from_places" class="form-control" placeholder="Enter a location" />
+        <input id="origin" type="hidden" name="origin" required />
+        </div>
+
+        <div class="form-group">
+        <label>Destination: </label>
+        <input  id="to_places" class="form-control" placeholder="Enter a location" />
+        <input id="destination" type="hidden" name="destination" required />
+        </div>
+    
+        <div class="form-group">
+        <label>Arrival time: </label>
+        <select class="form-control" name="arrival-time" id="arrival-hour">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option> 
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="0">12</option>
+        </select>
+        <select class="form-control" name="arrival-time" id="arrival-minute">
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+        </select>
+        <select name="arrival-time" id="arrival-period">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="walk">Walk</label>
+            <input type="radio" name="transport-mode" id="walk" value="WALKING" /><br>
+            <label for="cycle">Cycle</label>
+            <input type="radio" name="transport-mode" id="cycle" value="BICYCLING" /><br>
+            <label for="public-transport">Public Transport</label>
+            <input type="radio" name="transport-mode" id="public-transport" value="TRANSIT" /><br>
+            <label for="private-transport">Drive</label>
+            <input type="radio" name="transport-mode" id="private-transport" value="DRIVING" /><br>
+        </div>
+        <input type="submit" value="Calculate" class="btn btn-primary"/>
+        
+        <!-- <button type="submit" value="Submit">Submit</button> -->
+        
+
+        <div id="result">
+            <ul class="list-group">
+                <li  class="list-group-item d-flex justify-content-between align-items-center">
+                    Distance in mi :
+                    <span id="in_mile" class="badge badge-primary badge-pill"></span>
+                </li>
+                <li  class="list-group-item d-flex justify-content-between align-items-center">
+                    Distance in km
+                :
+                    <span id='in_kilo' class="badge badge-primary badge-pill"></span>
+                </li>
+                <li  class="list-group-item d-flex justify-content-between align-items-center">
+                    IN TEXT:
+                    <span id="duration_text" class="badge badge-primary badge-pill"></span>
+                </li>
+                <!-- <li  class="list-group-item d-flex justify-content-between align-items-center">
+                    IN SECONDS:
+                    <span id="duration_value" class="badge badge-primary badge-pill"></span>
+                </li> -->
+        
+                <li  class="list-group-item d-flex justify-content-between align-items-center">
+                    FROM:
+                    <span id="from" class="badge badge-primary badge-pill"></span>
+                </li>
+                <li  class="list-group-item d-flex justify-content-between align-items-center">
+                    TO:
+                    <span id="to" class="badge badge-primary badge-pill"></span>
+                </li>
+            </ul>
+        </div>
+        
+            <button onClick="history.go(0);">New Mission!</button>
+            <a href="/register">Click if you want to get serious about it</a>
+
+
+
+    </form>
+    <br>
+    <a href="/about">About BeOnTime</a>
+
+
+            
+   
+    <p id="demo"></p>
+
+    </div>
+    </div> 
+    </div>
+        
+        
+    
+   
+       
+    <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc_szJs7oC0f2EgF30cJtoJHQvVv7yhQA&libraries=places&callback=initMap&libraries=places&callback=initMap"></script>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4041533629194916"
+        data-ad-slot="2215737180"
+        data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({}); 
+    </script>
+
+</body>
+</html>
